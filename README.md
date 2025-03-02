@@ -1,4 +1,4 @@
-# Jenkins freestyle CI/CD Pipeline with Docker on AWS EC22
+# Jenkins freestyle CI/CD Pipeline with Docker on AWS EC2
 
 This guide provides step-by-step instructions to set up Jenkins freestyle CI/CD Pipeline on an AWS EC2 instance which involves configuration of SSH keys, integratation with GitHub, and deployment of Node.js application using Docker and Jenkins automation.
 
@@ -39,23 +39,19 @@ Command to see private key:
 sudo cat ~/.ssh/github-deploy 
 ```
 
-## 3. Configure Security Group
-Allow Jenkins access by adding inbound rules in the security group of EC2 instance.
-- **Add Port 8080** (Custom TCP, Anywhere-IPv4)
-
-## 4. Configure GitHub SSH Key
+## 3. Configure GitHub SSH Key
 1. Go to **GitHub → Settings → SSH and GPG keys → New SSH key**.
 2. Enter a title (e.g., `jenkins-master`).
 3. Key Type: `Authentication Key`.
 4. Paste the public key in key section.
 
-## 5. Create a Jenkins Project
+## 4. Create a Jenkins Project
 1. Open Jenkins at `http://your_public_ip:8080`.
 2. Click **New Item** and select **Freestyle Project**.
 3. Enter project name (e.g., `node-todo-app`).
 4. Click **OK**.
 
-## 6. Configure Project
+## 5. Configure Project
 - **Description**: `Node todo app with freestyle pipeline`.
 - **GitHub Project**: Add repository URL.
 - **Source Code Management**: Select **Git**.
@@ -71,14 +67,14 @@ Allow Jenkins access by adding inbound rules in the security group of EC2 instan
 - **Branch**: Select the required branch.
 - Leave other things as it is.
 
-## 7. Build and Deploy Application
+## 6. Build and Deploy Application
 1. Click **Save**.
 2. Click **Build Now**.
 3. Check **Console Output** for execution status.
 4. Navigate to Jenkins workspace path: `/var/lib/jenkins/workspace/node-todo-app`.
 5. **Allow port 8000** in Security Group (Custom TCP, Anywhere-IPv4) for accessing node-todo-app.
 
-## 8. Run Node.js App on EC2 (For Testing Purpose, can skip)
+## 7. Run Node.js App on EC2 (For Testing Purpose, can skip)
 ```bash
 sudo apt-get update
 ```
@@ -103,7 +99,7 @@ Verify the application at `http://your_public_ip:8000`.
 
 ---
 
-## 9. Deploy with Docker 
+## 8. Deploy with Docker 
 
 To ensure the application persists after EC2 reboot:
 ```bash
@@ -148,7 +144,7 @@ docker rm node-todo-app-con
 ```
 This will run the code through Docker while building container.
 
-## 10. Automate Deployment via Jenkins
+## 9. Automate Deployment via Jenkins
 Add the following commands in Jenkins **Build Steps → Execute Shell**:
 ```bash
 # Build a docker image
@@ -163,7 +159,7 @@ docker run -d --name node-todo-app-con -p 8000:8000 node-todo-app
 
 ---
 
-## 11. Automate Build with Webhooks
+## 10. Automate Build with Webhooks
 1. Install **GitHub Integration Plugin** in Jenkins from **Manage Jenkins → Plugins → Available Plugins**.
 2. Select **restart Jenkins when installation is complete and no jobs are running**.
 3. Go to **GitHub Repo → Settings → Webhooks → Add Webhook**.
