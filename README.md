@@ -78,7 +78,7 @@ Allow Jenkins access by adding inbound rules in the security group of EC2 instan
 4. Navigate to Jenkins workspace path: `/var/lib/jenkins/workspace/node-todo-app`.
 5. **Allow port 8000** in Security Group (Custom TCP, Anywhere-IPv4) for accessing node-todo-app.
 
-## 8. Run Node.js App on EC2
+## 8. Run Node.js App on EC2 (For Testing Purpose, can skip)
 ```bash
 sudo apt-get update
 ```
@@ -103,7 +103,7 @@ Verify the application at `http://your_public_ip:8000`.
 
 ---
 
-## 9. Deploy with Docker
+## 9. Deploy with Docker (For Testing Purpose, can skip)
 
 To ensure the application persists after EC2 reboot:
 ```bash
