@@ -81,9 +81,21 @@ Allow Jenkins access by adding inbound rules in the security group of EC2 instan
 ## 8. Run Node.js App on EC2
 ```bash
 sudo apt-get update
+```
+
+```bash
 sudo apt install nodejs -y
+```
+
+```bash
 sudo apt install npm -y
+```
+
+```bash
 sudo npm install -y
+```
+
+```bash
 node app.js
 ```
 
@@ -96,18 +108,42 @@ Verify the application at `http://your_public_ip:8000`.
 To ensure the application persists after EC2 reboot:
 ```bash
 sudo apt install docker.io -y
+```
+
+```bash
 sudo usermod -a -G docker $USER
+```
+
+```bash
 sudo usermod -a -G docker jenkins
+```
+
+```bash
 sudo systemctl restart jenkins
+```
+
+```bash
 sudo reboot
 ```
 
 Build and run the Docker container:
 ```bash
 docker build . -t node-todo-app:latest
+```
+
+```bash
 docker run -d --name node-todo-app-con -p 8000:8000 node-todo-app
-docker ps  
+```
+
+```bash
+docker ps
+```
+
+```bash
 docker stop node-todo-app-con
+```
+
+```bash
 docker rm node-todo-app-con
 ```
 This will run the code through Docker while building container.
