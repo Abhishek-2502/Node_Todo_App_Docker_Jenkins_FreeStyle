@@ -8,8 +8,8 @@ This guide provides step-by-step instructions to set up Jenkins freestyle CI/CD 
 
 ---
 
-## 1. Install Jenkins on EC2
-Follow the guide to install and set up Jenkins on your EC2 instance: `https://github.com/Abhishek-2502/Jenkins_Setup_AWS`
+## 1. Install Jenkins and Docker on EC2
+Follow the guide to install and set up Jenkins on your EC2 instance: `https://github.com/Abhishek-2502/Jenkins_Docker_Setup_AWS`
 
 ## 2. Configure SSH Keys
 Generate and configure SSH keys for secure authentication on EC2 instance.
@@ -100,27 +100,6 @@ Verify the application at `http://your_public_ip:8000`.
 ---
 
 ## 8. Deploy with Docker 
-
-To ensure the application persists after EC2 reboot:
-```bash
-sudo apt install docker.io -y
-```
-
-```bash
-sudo usermod -a -G docker $USER
-```
-
-```bash
-sudo usermod -a -G docker jenkins
-```
-
-```bash
-sudo systemctl restart jenkins
-```
-
-```bash
-sudo reboot
-```
 
 Build and run the Docker container: (For Testing Purpose, can skip)
 ```bash
