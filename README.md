@@ -151,6 +151,7 @@ This will run the code through Docker while building container.
 ## 10. Automate Deployment via Jenkins
 Add the following commands in Jenkins **Build Steps → Execute Shell**:
 ```bash
+# Build a docker image
 docker build . -t node-todo-app:latest
 
 # Stop and remove the existing container if it exists
