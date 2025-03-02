@@ -103,7 +103,7 @@ Verify the application at `http://your_public_ip:8000`.
 
 ---
 
-## 9. Deploy with Docker (For Testing Purpose, can skip)
+## 9. Deploy with Docker 
 
 To ensure the application persists after EC2 reboot:
 ```bash
@@ -126,7 +126,7 @@ sudo systemctl restart jenkins
 sudo reboot
 ```
 
-Build and run the Docker container:
+Build and run the Docker container: (For Testing Purpose, can skip)
 ```bash
 docker build . -t node-todo-app:latest
 ```
