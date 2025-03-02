@@ -174,7 +174,7 @@ docker run -d --name node-todo-app-con -p 8000:8000 node-todo-app
 8. In **Jenkins → Project → Configure**:
    - Select **GitHub hook trigger for GITScm polling** under **Triggers**.
 
-Now, any code push to GitHub will trigger an automatic build and deployment via Jenkins.
+Now, any code push to GitHub will trigger an automatic build and deployment via Jenkins. If doesn't work then build manually from jenkins for one time.
 
 #### NOTE: your_public_ip changes when you stop the EC2 instance. So update Payload URL accordingly
 
