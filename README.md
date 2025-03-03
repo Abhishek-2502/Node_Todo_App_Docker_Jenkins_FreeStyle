@@ -99,25 +99,29 @@ Verify the application at `http://your_public_ip:8000`.
 
 ---
 
-## 8. Deploy with Docker 
+## 8. Deploy with Docker (For Testing Purpose, can skip)
 
-Build and run the Docker container: (For Testing Purpose, can skip)
+Build Docker container
 ```bash
 docker build . -t node-todo-app:latest
 ```
 
+Run Docker container
 ```bash
 docker run -d --name node-todo-app-con -p 8000:8000 node-todo-app
 ```
 
+See running Docker Container
 ```bash
 docker ps
 ```
 
+Stop Docker container
 ```bash
 docker stop node-todo-app-con
 ```
 
+Remove Docker container
 ```bash
 docker rm node-todo-app-con
 ```
@@ -125,6 +129,7 @@ This will run the code through Docker while building container.
 
 ## 9. Automate Deployment via Jenkins
 Add the following commands in Jenkins **Build Steps → Execute Shell**:
+
 ```bash
 # Build a docker image
 docker build . -t node-todo-app:latest
