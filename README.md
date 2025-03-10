@@ -75,6 +75,8 @@ sudo cat ~/.ssh/github-deploy
 5. **Allow port 8000** in Security Group (Custom TCP, Anywhere-IPv4) for accessing node-todo-app.
 
 ## 7. Run Node.js App on EC2 (For Testing Purpose, can skip)
+
+### Method 1
 ```bash
 sudo apt-get update
 ```
@@ -94,6 +96,42 @@ sudo npm install -y
 ```bash
 node app.js
 ```
+
+### Method 2 (NVM)
+NVM (Node Version Manager) allows you to install and manage multiple Node.js versions.
+
+1. Install NVM:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+source ~/.bashrc  # Load NVM
+```
+
+2. Install Node.js (Install latest LTS version) :
+
+```bash
+nvm install --lts
+```
+
+3. Verify installation:
+
+```bash
+node -v
+npm -v
+```
+
+4. List available Node.js versions:
+
+```bash
+nvm ls-remote
+```
+
+5. Switch between installed versions:
+
+```bash
+nvm install 18
+```
+
 
 Verify the application at `http://your_public_ip:8000`.
 
