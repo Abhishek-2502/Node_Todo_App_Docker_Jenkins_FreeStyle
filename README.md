@@ -196,11 +196,12 @@ docker run -d --name node-todo-app-con -p 8000:8000 node-todo-app
 1. Install **GitHub Integration Plugin** in Jenkins from **Manage Jenkins → Plugins → Available Plugins**.
 2. Select **restart Jenkins when installation is complete and no jobs are running**.
 3. Go to **GitHub Repo → Settings → Webhooks → Add Webhook**.
-4. Set Payload URL: `http://your_public_ip:8080/github-webhook/`.
+4. Set Payload URL: `http://your_jenkins_master_public_ip:8080/github-webhook/`.
 5. Content Type: `application/json`.
-6. Select **Just the push event**.
-7. Save and verify webhook with a green tick.
-8. In **Jenkins → Project → Configure**:
+6. Leave password field empty.
+7. Select **Just the push event**.
+8. Save and verify webhook with a green tick.
+9. In **Jenkins → Project → Configure**:
    - Select **GitHub hook trigger for GITScm polling** under **Triggers**.
 
 Now, any code push to GitHub will trigger an automatic build and deployment via Jenkins. If doesn't work then build manually from jenkins for one time.
