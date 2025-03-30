@@ -198,8 +198,8 @@ docker run -d --name node-todo-app-con -p 8000:8000 node-todo-app
 3. Go to **GitHub Repo → Settings → Webhooks → Add Webhook**.
 4. Set Payload URL: `http://your_jenkins_master_public_ip:8080/github-webhook/`.
 5. Content Type: `application/json`.
-6. Leave password field empty.
-7. Select **Just the push event**.
+6. Select **Just the push event**.
+7. Leave secret field empty and other fields as it is.
 8. Save and verify webhook with a green tick.
 9. In **Jenkins → Project → Configure**:
    - Select **GitHub hook trigger for GITScm polling** under **Triggers**.
