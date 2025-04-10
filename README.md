@@ -19,6 +19,11 @@ Command to generate secret key:
 sudo ssh-keygen -t rsa -b 4096 -f ~/.ssh/github-deploy
 ```
 
+Command to add keys in Known Hosts:
+```bash
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+```
+
 Check ownership of the key file:
 ```bash
 ls -l ~/.ssh/github-deploy
@@ -33,6 +38,7 @@ Command to give permissions:
 ```bash
 sudo chmod 600 ~/.ssh/authorized_keys
 sudo chmod 600 ~/.ssh/github-deploy
+chmod 644 ~/.ssh/known_hosts
 ```
 
 Command for passwordless SSH login or deploy keys for GitHub, CI/CD, or remote servers.
