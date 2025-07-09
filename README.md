@@ -1,6 +1,6 @@
-# Jenkins freestyle CI/CD Pipeline with Docker on AWS EC2
+# Jenkins freestyle CI/CD Pipeline with Docker on an Instance
 
-This guide provides step-by-step instructions to set up Jenkins freestyle CI/CD Pipeline on an AWS EC2 instance which involves configuration of SSH keys, integratation with GitHub, and deployment of Node.js application using Docker and Jenkins automation.
+This guide provides step-by-step instructions to set up Jenkins freestyle CI/CD Pipeline on an instance which involves configuration of SSH keys, integratation with GitHub, and deployment of Node.js application using Docker and Jenkins automation.
 
 ## Prerequisites
 - An AWS EC2 instance (Ubuntu recommended)
@@ -8,7 +8,7 @@ This guide provides step-by-step instructions to set up Jenkins freestyle CI/CD 
 
 ---
 
-## 1. Install Jenkins and Docker on EC2
+## 1. Install Jenkins and Docker on instance
 Follow the guide to install and set up Jenkins and Docker on your EC2 instance: [Java_Jenkins_Docker_Setup_AWS](https://github.com/Abhishek-2502/Java_Jenkins_Docker_Setup_AWS)
 
 ## 2. Configure SSH Keys
