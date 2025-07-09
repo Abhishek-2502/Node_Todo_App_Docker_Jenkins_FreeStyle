@@ -29,7 +29,7 @@ Check ownership of the key file:
 ls -l ~/.ssh/github-deploy
 ```
 
-If the owner is root, change it to the current user (Current user can be found using **whoami**)
+If the owner is root, change it to the current user (Current user can be found using **whoami** command)
 ```bash
 sudo chown username:username ~/.ssh/github-deploy
 ```
@@ -79,7 +79,7 @@ sudo cat ~/.ssh/github-deploy
   - **Scope**: Global (Jenkins, nodes, items, all child items, etc)
   - **ID**: `github-jenkins`
   - **Description**: `This is for Jenkins and GitHub integration`
-  - **Username**: `ubuntu` (Instance username)
+  - **Username**: `username` (username can be found using **whoami** command) 
   - **Private Key**: Paste private key from `-----BEGIN OPENSSH PRIVATE KEY-----` to `-----END OPENSSH PRIVATE KEY-----`.
 - **Branch**: Select the required branch.
 - Leave other things as it is.
