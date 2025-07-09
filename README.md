@@ -3,16 +3,16 @@
 This guide provides step-by-step instructions to set up Jenkins freestyle CI/CD Pipeline on an instance which involves configuration of SSH keys, integratation with GitHub, and deployment of Node.js application using Docker and Jenkins automation.
 
 ## Prerequisites
-- An AWS EC2 instance (Ubuntu recommended)
+- An instance (Ubuntu recommended)
 - GitHub repository with application code
 
 ---
 
 ## 1. Install Jenkins and Docker on instance
-Follow the guide to install and set up Jenkins and Docker on your EC2 instance: [Java_Jenkins_Docker_Setup_AWS](https://github.com/Abhishek-2502/Java_Jenkins_Docker_Setup_AWS)
+Follow the guide to install and set up Jenkins and Docker on your instance: [Java_Jenkins_Docker_Setup_AWS](https://github.com/Abhishek-2502/Java_Jenkins_Docker_Setup_AWS)
 
 ## 2. Configure SSH Keys
-Generate and configure SSH keys for secure authentication on EC2 instance.
+Generate and configure SSH keys for secure authentication on your instance.
 
 Command to generate secret key:
 ```bash
@@ -79,7 +79,7 @@ sudo cat ~/.ssh/github-deploy
   - **Scope**: Global (Jenkins, nodes, items, all child items, etc)
   - **ID**: `github-jenkins`
   - **Description**: `This is for Jenkins and GitHub integration`
-  - **Username**: `ubuntu` (EC2 username)
+  - **Username**: `ubuntu` (Instance username)
   - **Private Key**: Paste private key from `-----BEGIN OPENSSH PRIVATE KEY-----` to `-----END OPENSSH PRIVATE KEY-----`.
 - **Branch**: Select the required branch.
 - Leave other things as it is.
@@ -91,7 +91,7 @@ sudo cat ~/.ssh/github-deploy
 4. Navigate to Jenkins workspace path: `/var/lib/jenkins/workspace/node-todo-app`.
 5. **Allow port 8000** in Security Group (Custom TCP, Anywhere-IPv4) for accessing node-todo-app.
 
-## 7. Run Node.js App on EC2 (For Testing Purpose, can skip)
+## 7. Run Node.js App on Instnace (For Testing Purpose, can skip)
 
 ### Method 1
 ```bash
@@ -212,12 +212,12 @@ docker run -d --name node-todo-app-con -p 8000:8000 node-todo-app
 
 Now, any code push to GitHub will trigger an automatic build and deployment via Jenkins. If doesn't work then build manually from jenkins for one time.
 
-#### NOTE: your_public_ip changes when you stop the EC2 instance. So update Payload URL accordingly
+#### NOTE: your_public_ip changes when you stop the instance. So update Payload URL accordingly
 
 ---
 
 ## Conclusion
-You have successfully set up Jenkins on EC2, integrated it with GitHub using SSH keys, configured CI/CD with Docker, and automated deployments using webhooks.
+You have successfully set up Jenkins on your instance, integrated it with GitHub using SSH keys, configured CI/CD with Docker, and automated deployments using webhooks.
 
 Test your application at `http://your_public_ip:8000` and ensure the pipeline is working as expected.
 
