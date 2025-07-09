@@ -29,9 +29,9 @@ Check ownership of the key file:
 ls -l ~/.ssh/github-deploy
 ```
 
-If the owner is root, change it to the current user:
+If the owner is root, change it to the current user (Current user can be found using **whoami**)
 ```bash
-sudo chown ubuntu:ubuntu ~/.ssh/github-deploy
+sudo chown username:username ~/.ssh/github-deploy
 ```
 
 Command to give permissions:
